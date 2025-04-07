@@ -10,7 +10,7 @@ const app = express();
 app.use(cookieParser());
 app.use(express.json());
 app.use(cors({
-    origin: "https://credit-sea-loan-potal-frontend-u2qg.vercel.app/", 
+    origin: "https://credit-sea-loan-potal-frontend-u2qg.vercel.app", 
     credentials: true, 
   }));
 app.use(express.json());
