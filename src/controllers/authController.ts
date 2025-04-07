@@ -34,8 +34,8 @@ export const register = async (req: Request, res: Response): Promise<void> => {
     res
       .cookie('token', token, {
         httpOnly: true,
-        secure: process.env.NODE_ENV === 'production',
-        sameSite: process.env.NODE_ENV ==="none" ,
+        secure: true,
+        sameSite:"none" ,
         maxAge: 7 * 24 * 60 * 60 * 1000
       })
       .status(201)
@@ -76,8 +76,8 @@ export const login = async (req: Request, res: Response): Promise<void> => {
     res
       .cookie('token', token, {
         httpOnly: true,
-        secure: process.env.NODE_ENV === 'production',
-        sameSite: process.env.NODE_ENV ==="none" ,
+        secure: true,
+        sameSite:"none" ,
         maxAge: 7 * 24 * 60 * 60 * 1000 // 7 days
       })
       .status(200)
@@ -98,7 +98,7 @@ export const login = async (req: Request, res: Response): Promise<void> => {
 export const logout = (req: Request, res: Response): void => {
   res.clearCookie('token', {
     httpOnly: true,
-    secure: process.env.NODE_ENV === 'production',
+    secure:true,
     sameSite: 'strict'
   });
 
